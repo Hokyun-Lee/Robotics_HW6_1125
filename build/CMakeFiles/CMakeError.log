@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_697a6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_697a6.dir/build.make CMakeFiles/cmTC_697a6.dir/build
-make[1]: Entering directory '/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_697a6.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_697a6.dir/CheckSymbolExists.cxx.o -c /home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-Linking CXX executable cmTC_697a6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_697a6.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_697a6.dir/CheckSymbolExists.cxx.o  -o cmTC_697a6 
-CMakeFiles/cmTC_697a6.dir/CheckSymbolExists.cxx.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_b9798/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b9798.dir/build.make CMakeFiles/cmTC_b9798.dir/build
+make[1]: Entering directory '/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b9798.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_b9798.dir/CheckSymbolExists.cxx.o -c /home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_b9798
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9798.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b9798.dir/CheckSymbolExists.cxx.o  -o cmTC_b9798 
+CMakeFiles/cmTC_b9798.dir/CheckSymbolExists.cxx.o: In function `main':
 CheckSymbolExists.cxx:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_697a6.dir/build.make:97: recipe for target 'cmTC_697a6' failed
-make[1]: *** [cmTC_697a6] Error 1
-make[1]: Leaving directory '/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_697a6/fast' failed
-make: *** [cmTC_697a6/fast] Error 2
+CMakeFiles/cmTC_b9798.dir/build.make:97: recipe for target 'cmTC_b9798' failed
+make[1]: *** [cmTC_b9798] Error 1
+make[1]: Leaving directory '/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b9798/fast' failed
+make: *** [cmTC_b9798/fast] Error 2
 
-File /home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+File /home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
 #include <pthread.h>
 

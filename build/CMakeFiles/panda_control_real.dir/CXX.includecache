@@ -62,9 +62,9 @@ unistd.h
 fcntl.h
 -
 
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/controller.cpp
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/controller.cpp
 controller.h
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/controller.h
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/controller.h
 iostream
 -
 iomanip
@@ -72,7 +72,7 @@ iomanip
 cmath
 -
 
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/main.cpp
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/main.cpp
 sys/mman.h
 -
 iostream
@@ -90,15 +90,15 @@ franka/robot.h
 franka/model.h
 -
 controller.h
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/controller.h
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/controller.h
 motion_generator.h
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/motion_generator.h
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/motion_generator.h
 terminal_func.h
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/terminal_func.h
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/terminal_func.h
 
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/motion_generator.cpp
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/motion_generator.cpp
 motion_generator.h
-/home/dyros/Desktop/panda_control_real_lhk_hw6/src/motion_generator.h
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/motion_generator.h
 
 /home/dyros/libfranka/include/franka/command_types.h
 array

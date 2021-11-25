@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dyros/Desktop/panda_control_real_lhk_hw6/src/controller.cpp" "/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/panda_control_real.dir/src/controller.cpp.o"
-  "/home/dyros/Desktop/panda_control_real_lhk_hw6/src/main.cpp" "/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/panda_control_real.dir/src/main.cpp.o"
-  "/home/dyros/Desktop/panda_control_real_lhk_hw6/src/motion_generator.cpp" "/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/panda_control_real.dir/src/motion_generator.cpp.o"
+  "/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/controller.cpp" "/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/panda_control_real.dir/src/controller.cpp.o"
+  "/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/main.cpp" "/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/panda_control_real.dir/src/main.cpp.o"
+  "/home/dyros/Desktop/panda_control_real_2021_20008_1125/src/motion_generator.cpp" "/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/panda_control_real.dir/src/motion_generator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

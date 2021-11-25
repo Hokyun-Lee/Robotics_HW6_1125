@@ -5,7 +5,7 @@ CMakeFiles/panda_control_real.dir/src/controller.cpp.o
  ../include/controller.h
  ../include/franka_model_interface.h
  ../include/math_type_define.h
- /home/dyros/Desktop/panda_control_real_lhk_hw6/src/controller.cpp
+ /home/dyros/Desktop/panda_control_real_2021_20008_1125/src/controller.cpp
  /home/dyros/libfranka/include/franka/command_types.h
  /home/dyros/libfranka/include/franka/control_types.h
  /home/dyros/libfranka/include/franka/duration.h
@@ -239,7 +239,7 @@ CMakeFiles/panda_control_real.dir/src/main.cpp.o
  ../include/math_type_define.h
  ../include/motion_generator.h
  ../include/terminal_func.h
- /home/dyros/Desktop/panda_control_real_lhk_hw6/src/main.cpp
+ /home/dyros/Desktop/panda_control_real_2021_20008_1125/src/main.cpp
  /home/dyros/libfranka/include/franka/command_types.h
  /home/dyros/libfranka/include/franka/control_types.h
  /home/dyros/libfranka/include/franka/duration.h
@@ -471,7 +471,7 @@ CMakeFiles/panda_control_real.dir/src/main.cpp.o
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/StemFunction.h
 CMakeFiles/panda_control_real.dir/src/motion_generator.cpp.o
  ../include/motion_generator.h
- /home/dyros/Desktop/panda_control_real_lhk_hw6/src/motion_generator.cpp
+ /home/dyros/Desktop/panda_control_real_2021_20008_1125/src/motion_generator.cpp
  /home/dyros/libfranka/include/franka/command_types.h
  /home/dyros/libfranka/include/franka/control_types.h
  /home/dyros/libfranka/include/franka/duration.h

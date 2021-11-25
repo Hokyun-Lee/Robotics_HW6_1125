@@ -128,6 +128,8 @@ class ArmController
 	double k_obs;
 
 
+
+
 	Vector3d saturation_x_desired_dot;
 	Vector3d x_desired_;
 	Vector3d x_desired_dot_;
@@ -137,6 +139,8 @@ class ArmController
 	ofstream writeFile;
 	bool write_;
 	bool write_init_;
+
+
 
     FrankaModelInterface model_interface_;
 

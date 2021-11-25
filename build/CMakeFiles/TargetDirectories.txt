@@ -1,3 +1,3 @@
-/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/rebuild_cache.dir
-/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/panda_control_real.dir
-/home/dyros/Desktop/panda_control_real_lhk_hw6/build/CMakeFiles/edit_cache.dir
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/rebuild_cache.dir
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/panda_control_real.dir
+/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/CMakeFiles/edit_cache.dir

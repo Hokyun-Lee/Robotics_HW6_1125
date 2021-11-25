@@ -64,65 +64,58 @@ void ArmController::compute()
 		target_position << 0.0, 0.0, 0.0, -M_PI / 2., 0.0, M_PI / 2, 0;
 		q_desired_ = cubicVector<7>(play_time_, control_start_time_, control_start_time_ + duration, q_init_, target_position, qdot_init_, qdot_target_);
 	}
-	//else if (control_mode_ == "CLIK_init")
-	//{
-	//	double duration = 5.0;
-	//	Vector7d target_position;
-	//	target_position << 0.0, 0.0, 0.0, -M_PI / 2., 0.0, M_PI / 2, 0;
-	//	q_desired_ = cubicVector<7>(play_time_, control_start_time_, control_start_time_ + duration, q_init_, target_position, qdot_init_, qdot_target_);
-	//}
-	// else if (control_mode_ == "CLIK")
-	// {
-	// 	x_target_ << 0.25, 0.28, 0.65;
-	// 	rotation_target_ << 0.7071, 0.7071, 0, 0.7071, -0.7071, 0, 0, 0,-1;
- //       
-	// 	double duration = 3.0;
+	else if (control_mode_ == "CLIK_init")
+	{
+		double duration = 5.0;
+		Vector7d target_position;
+		target_position << 0.0, 0.0, 0.0, -M_PI / 2., 0.0, M_PI / 2, 0;
+		q_desired_ = cubicVector<7>(play_time_, control_start_time_, control_start_time_ + duration, q_init_, target_position, qdot_init_, qdot_target_);
+	}
+	else if (control_mode_ == "CLIK")
+	{
+		x_target_ << 0.25, 0.28, 0.65;
+		rotation_target_ << 0.7071, 0.7071, 0, 0.7071, -0.7071, 0, 0, 0,-1;
+       
+		double duration = 5.0;
 
-	// 	Matrix<double, 7, 6> pseudo_j_;
-	// 	pseudo_j_ = j_from_q_desired_.transpose() * (j_from_q_desired_ * j_from_q_desired_.transpose()).inverse();
-	// 	// cout << "pseudo_j_ :\n" << pseudo_j_ << endl;
+		AngleAxisd angle_axis_desired, angle_axis_target;
 
-	// 	for (int i = 0; i < 3; i++)
-	// 	{
-	// 		x_cubic_(i) = DyrosMath::cubicDot(play_time_, control_start_time_, control_start_time_ + duration, x_init_(i), x_target_(i), 0.0, 0.0, hz_);
-	// 	}
+		Matrix3d rotation_desired = rotation_init_.transpose() * rotation_target_;
+		angle_axis_target.fromRotationMatrix(rotation_desired);
 
-	// 	xdot_desired_(0) = x_cubic_(0);
-	// 	xdot_desired_(1) = x_cubic_(1);
-	// 	xdot_desired_(2) = x_cubic_(2);
-	// 	xdot_desired_(3) = -DyrosMath::getPhi(rotation_, body_to_ee_rotation)(0);
-	// 	xdot_desired_(4) = -DyrosMath::getPhi(rotation_, body_to_ee_rotation)(1);
-	// 	xdot_desired_(5) = -DyrosMath::getPhi(rotation_, body_to_ee_rotation)(2);
-	// 	x_o_init_(0) = x_init_(0);
-	// 	x_o_init_(1) = x_init_(1);
-	// 	x_o_init_(2) = x_init_(2);
-	// 	x_o_init_(3) = rotation_init_(0);
-	// 	x_o_init_(4) = rotation_init_(1);
-	// 	x_o_init_(5) = rotation_init_(2);
-	// 	// cout << "xdot_desired_ :\n" << xdot_desired_ << endl;
+		double angle_desired, angle_dot_desired;
 
-	// 	if (control_start_time_ == play_time_) {
-	// 		x_desired_ = x_o_init_ + xdot_desired_ * dt_;
-	// 		// cout << "ONCE" << endl;
-	// 	}
-	// 	else {
-	// 		x_desired_ = x_desired_ + xdot_desired_ * dt_;
-	// 	}
+		angle_desired = DyrosMath::cubic(play_time_, control_start_time_, control_start_time_ + duration, 0, angle_axis_target.angle(), 0, 0);
+		angle_dot_desired = DyrosMath::cubicDot(play_time_, control_start_time_, control_start_time_ + duration, 0, angle_axis_target.angle(), 0, 0, hz_);
+		
+		Vector6d x_desired_, x_dot_desired_;
+		Vector6d x_rot_from_q_desired_;
 
-	// 	Kp.setIdentity();
-	// 	Kp = 1 * Kp;
+		x_desired_.head(3) = cubicVector<3>(play_time_, control_start_time_, control_start_time_+ duration, x_init_, x_target_, x_dot_init_, x_dot_target_);
+		x_dot_desired_.head(3) = cubicDotVector<3>(play_time_, control_start_time_, control_start_time_ + duration, x_init_, x_target_, x_dot_init_, x_dot_target_,hz_);
+		x_dot_desired_.tail<3>() = angle_dot_desired * angle_axis_target.axis();
 
-	// 	x_q_desired_(0) = x_from_q_desired_(0);
-	// 	x_q_desired_(1) = x_from_q_desired_(1);
-	// 	x_q_desired_(2) = x_from_q_desired_(2);
-	// 	x_q_desired_(3) = rotation_from_q_desired_(0);
-	// 	x_q_desired_(4) = rotation_from_q_desired_(1);
-	// 	x_q_desired_(5) = rotation_from_q_desired_(2);
+		angle_axis_desired = AngleAxisd(angle_desired, angle_axis_target.axis());
+		Matrix3d rotation_from_angle_axis = angle_axis_desired.toRotationMatrix();
+		Matrix3d rotation_desired_zero = rotation_init_ * rotation_from_angle_axis;
 
-	// 	//cout << "xdesired error\n" << x_desired_ - x_q_desired_ << endl;
-	// 	qdot_desired_ = pseudo_j_ * (xdot_desired_ + Kp * (x_desired_ - x_q_desired_));
-	// 	q_desired_ = q_desired_ + qdot_desired_ * 1 * dt_;
-	// }
+		x_desired_.tail<3>() = DyrosMath::getPhi(rotation_desired_zero, rotation_from_q_desired_);
+		x_rot_from_q_desired_.head(3) = x_from_q_desired_;
+		x_rot_from_q_desired_.tail<3>() << 0, 0, 0;
+
+		Matrix<double, 7, 6> pseudo_j_;
+		pseudo_j_ = j_from_q_desired_.transpose() * (j_from_q_desired_ * j_from_q_desired_.transpose()).inverse();
+		// cout << "pseudo_j_ :\n" << pseudo_j_ << endl;
+
+		Matrix6d Kp;
+		Kp.setIdentity();
+		Kp = 1 * Kp;
+
+		Vector7d q_dot_desired_;
+		//cout << "xdesired error\n" << x_desired_ - x_q_desired_ << endl;
+		q_dot_desired_ = pseudo_j_ * (x_dot_desired_ + Kp * (x_desired_ - x_rot_from_q_desired_));
+		q_desired_ = q_desired_ + q_dot_desired_ *  dt_;
+	}
     else if (control_mode_ == "Dynamics")
     {
         q_target_ << 0.0, 0.0, 0.0, -60*DEG2RAD, 0.0, 90*DEG2RAD, 0.0;

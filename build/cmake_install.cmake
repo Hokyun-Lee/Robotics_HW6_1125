@@ -1,4 +1,4 @@
-# Install script for directory: /home/dyros/Desktop/panda_control_real_lhk_hw6
+# Install script for directory: /home/dyros/Desktop/panda_control_real_2021_20008_1125
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dyros/Desktop/panda_control_real_lhk_hw6/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dyros/Desktop/panda_control_real_2021_20008_1125/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

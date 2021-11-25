@@ -43,8 +43,8 @@ void inputCollector()
         //MODE('t', "torque_ctrl_dynamic")
   
         // POSITION
-        //MODE('1', "CLIK_init")
-        //MODE('2', "CLIK")
+        MODE('1', "CLIK_init")
+        MODE('2', "CLIK")
 
         // TORQUE
         MODE('3', "Joint_Space_PD_init")
@@ -179,10 +179,10 @@ int main()
 
     // TODO: position mode : 
     // robot.control(position_control_callback);
-    // robot.control(position_control_callback, franka::ControllerMode::kJointImpedance, true, 10.0);
+    robot.control(position_control_callback, franka::ControllerMode::kJointImpedance, true, 10.0);
 
     // TODO: torque mode : 
-    robot.control(torque_control_callback);
+    // robot.control(torque_control_callback);
   } catch (const franka::Exception& e) {
     std::cout << e.what() << std::endl;
     running = false;
